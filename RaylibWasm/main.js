@@ -1,11 +1,11 @@
 ﻿import { dotnet } from './_framework/dotnet.js'
 
-const { getAssemblyExports, getConfig } = await dotnet
+const runtime = await dotnet
     .withDiagnosticTracing(false)
     .create();
 
-const config = getConfig();
-const exports = await getAssemblyExports(config.mainAssemblyName);
+const config = runtime.getConfig();
+const exports = await runtime.getAssemblyExports(config.mainAssemblyName);
 
 dotnet.instance.Module['canvas'] = document.getElementById('canvas');
 
@@ -15,5 +15,5 @@ function mainLoop() {
     window.requestAnimationFrame(mainLoop);
 }
 
-await dotnet.run();
+await runtime.runMain();
 window.requestAnimationFrame(mainLoop);
