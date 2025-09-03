@@ -1,6 +1,6 @@
 # RaylibWasm
 
-.Net 8.0 webasssembly starter project using raylib-cs nuget.
+.Net 9.0 webasssembly starter project using raylib-cs nuget.
 
 I've followed [DotnetRaylibWasm](https://github.com/stanoddly/DotnetRaylibWasm) example project and some official Microsoft documentation.
 
@@ -9,7 +9,7 @@ I've followed [DotnetRaylibWasm](https://github.com/stanoddly/DotnetRaylibWasm) 
 
 ## Setup
 
-You must have .Net 8.0 installed before start.
+You must have .Net 9.0 installed before start.
 
 Then install wasm toolset:
 
@@ -42,7 +42,7 @@ dotnet tool install --global dotnet-serve
 
 And then just call this command to start web server for your build:
 ```
-dotnet serve --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json --directory RaylibWasm\bin\Release\net8.0\browser-wasm\AppBundle\
+dotnet serve --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json --directory RaylibWasm\bin\Release\net9.0\browser-wasm\AppBundle\
 ```
 
 While server is running you can use publish command to update your files without any need to restart server.
